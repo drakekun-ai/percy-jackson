@@ -7,7 +7,7 @@ works with no internet connection. This only needs to be done once.
 The live URL is:
 
 ```
-https://drakekun-ai.github.io/greek-history-myth/
+https://drakekun-ai.github.io/percy-jackson/
 ```
 
 ---
