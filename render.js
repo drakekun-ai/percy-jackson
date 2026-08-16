@@ -28,6 +28,19 @@ const Render = (() => {
       .join("\n");
   }
 
+  function lessonImage(lesson) {
+    if (!lesson.image) return "";
+    const img = lesson.image;
+    return `
+      <figure class="lesson-image">
+        <img src="${img.file}" alt="${escapeHtml(img.alt || lesson.title)}" loading="lazy" />
+        <figcaption class="small muted">
+          ${escapeHtml(img.alt || "")}${img.alt ? " — " : ""}<a href="${img.commonsUrl}" target="_blank" rel="noopener">${escapeHtml(img.artist || "Wikimedia Commons")}</a>, ${escapeHtml(img.license || "")}, via Wikimedia Commons
+        </figcaption>
+      </figure>
+    `;
+  }
+
   function factsStrip(lesson) {
     const items = [];
     if (lesson.domain) items.push(["Domain", lesson.domain]);
@@ -109,6 +122,7 @@ const Render = (() => {
         ${breadcrumb(lesson)}
         ${factsStrip(lesson)}
       </div>
+      ${lessonImage(lesson)}
       <div class="narrative">
         ${narrative(lesson.narrative || [])}
       </div>
@@ -117,5 +131,5 @@ const Render = (() => {
     `;
   }
 
-  return { narrative, factsStrip, crossLinks, breadcrumb, familyStrip, lessonPage, escapeHtml };
+  return { narrative, factsStrip, crossLinks, breadcrumb, familyStrip, lessonImage, lessonPage, escapeHtml };
 })();

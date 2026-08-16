@@ -10,6 +10,7 @@ LESSONS["o-chaos"] = {
   phase: "p0",
   title: "Chaos, Gaia, and the First Family",
   subtitle: "How the Greeks explained the fact that anything exists at all",
+  image: { file: "img/o-chaos.jpg", alt: "Relief of Gaia, the Earth, from the Pergamon Altar", artist: "Gryffindor", license: "Public domain", commonsUrl: "https://commons.wikimedia.org/wiki/File:Pergamonmuseum_-_Antikensammlung_-_Pergamonaltar_13_detail.jpg" },
   era: "Before time — this is the myth, not a date",
   narrative: [
     "Every mythology has to answer one annoying question first: what was there before there was anything? The Greek answer is Chaos — not \"chaos\" like a messy bedroom, but a yawning, formless gap. No earth, no sky, no gods. Just space with nothing in it yet.",
@@ -39,6 +40,7 @@ LESSONS["o-titans"] = {
   phase: "p0",
   title: "The Titans and the Fall of Uranus",
   subtitle: "The first coup, and the wound that starts everything else",
+  image: { file: "img/o-titans.jpg", alt: "Rhea handing Cronus a swaddled stone in place of baby Zeus, Attic vase", artist: "Attributed to the Nausicaä Painter (Met Museum)", license: "CC0", commonsUrl: "https://commons.wikimedia.org/wiki/File:Rhea_handing_a_swaddled_stone_to_Cronus%2C_Attic_terracotta_pelike%2C_c._460%E2%80%93450_BC%2C_Met_06.1021.144.jpg_%28cropped%29.jpg" },
   era: "Before time",
   narrative: [
     "One Titan says yes to Gaia's plan: Kronos, the youngest and most ambitious of the twelve. Gaia arms him with the sickle, he ambushes his father, and he castrates Uranus — cutting him in a way that permanently ends his ability to rule. Uranus's blood falls on the earth and produces new beings (including the Furies, who exist specifically to punish crimes against family — which is a pointed detail, since Kronos just committed one). Uranus's severed essence falls into the sea, and where the sea foams around it, Aphrodite rises fully formed. She's therefore older than the Olympian generation she later hangs out with — technically an aunt figure who shows up to every party as if she's one of the cousins.",
@@ -67,6 +69,7 @@ LESSONS["o-titanomachy"] = {
   phase: "p0",
   title: "The Titanomachy",
   subtitle: "Zeus comes back for his siblings, and the war lasts ten years",
+  image: { file: "img/o-titanomachy.jpg", alt: "The Fall of the Titans, by Cornelis van Haarlem", artist: "Cornelis van Haarlem", license: "Public domain", commonsUrl: "https://commons.wikimedia.org/wiki/File:Cornelis_Cornelisz._van_Haarlem_-_The_Fall_of_the_Titans_-_Google_Art_Project.jpg" },
   era: "Before time",
   narrative: [
     "Zeus grows up on Crete without his father knowing he exists. As an adult, he returns — sometimes the story has him working as Kronos's cupbearer in disguise — and slips his father a drink laced with a substance that makes him vomit up everything he swallowed. They come back up in the exact reverse of the order they went down, like the last plate off a stack: Demeter first, then Hera, Poseidon, and Hades — and Hestia dead last, since she was swallowed first and sat at the very bottom the whole time. That's the detail worth holding onto: Hestia is simultaneously Kronos and Rhea's first-born and, by the moment she's freed, the last one out — which is exactly why some traditions call her both the eldest and the youngest Olympian at once.",

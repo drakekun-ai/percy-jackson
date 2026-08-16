@@ -91,6 +91,10 @@ A few things work together on purpose:
 - **The Pantheon ties it all together visually.** It's the one page where every lesson
   you've done shows up on a single diagram at once — which is exactly the point of doing
   the Sunday Assembly regularly, not just reading it as a reference.
+- **A real image on almost every lesson.** 33 of the 35 lessons open with a classical
+  statue, ancient vase painting, mosaic, or museum artifact pulled from Wikipedia/Wikimedia
+  Commons and stored locally in `img/` — a face (or a scene) to attach to the name, not
+  just prose. See [CREDITS.md](CREDITS.md) for every source and license.
 
 ---
 
@@ -171,6 +175,8 @@ pantheon.html   free exploration of the family tree + the Sunday assembly drill
 sw.js                 service worker — precaches everything for offline use
 manifest.webmanifest  app name, icons, standalone display (the PWA install prompt)
 icon-192.png, icon-512.png, apple-touch-icon.png   generated app icons (tools/make_icons.py)
+img/                  one image per lesson, pulled from Wikimedia Commons (tools/fetch_images.py)
+CREDITS.md            artist/license/source for every image in img/
 
 styles.css   all styling, light and dark, parchment/marble theme
 
@@ -189,6 +195,7 @@ content-threads.js    Phase 3 lesson content
 
 tools/make_icons.py      draws the app icons
 tools/stamp_version.py   bumps every ?v= cache-buster AND the service worker cache name
+tools/fetch_images.py    pulls one lesson image from Wikipedia into img/, records the license
 ```
 
 `tools/` is developer-only — the site itself never fetches anything from it.
@@ -225,11 +232,13 @@ Add new facts at the end of the array, don't reorder existing ones.
 ### Data model
 
 Each lesson is a plain object: `id`, `phase`, `title`, `subtitle`, optional metadata
-(`domain`, `symbol`, `roman`, `era`, `where`), a `narrative` array (strings are paragraphs;
-`{aside, text}` objects render as a pulled-out note), a `facts` array of `{q, a}` pairs
-that become self-graded review cards, an optional `match` array of `{prompt, answer,
-options}` for auto-graded multiple choice, and a `links` array of `{id}` (or `{id, label}`
-if the target lesson isn't written yet) for the cross-link chips at the bottom of the page.
+(`domain`, `symbol`, `roman`, `era`, `where`), an optional `image` (`{file, alt, artist,
+license, commonsUrl}` — `render.js` renders it with a credit line automatically), a
+`narrative` array (strings are paragraphs; `{aside, text}` objects render as a pulled-out
+note), a `facts` array of `{q, a}` pairs that become self-graded review cards, an optional
+`match` array of `{prompt, answer, options}` for auto-graded multiple choice, and a `links`
+array of `{id}` (or `{id, label}` if the target lesson isn't written yet) for the cross-link
+chips at the bottom of the page.
 
 ### The scheduler
 

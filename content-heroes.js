@@ -10,6 +10,7 @@ LESSONS["h-perseus"] = {
   phase: "p2",
   title: "Perseus",
   subtitle: "The original monster-slayer — Medusa, a flying horse, and a reflective shield",
+  image: { file: "img/h-perseus.jpg", alt: "Perseus with the head of Medusa, Roman-era statue", artist: "Sailko", license: "CC BY 3.0", commonsUrl: "https://commons.wikimedia.org/wiki/File:Perseo_con_la_testa_di_medusa%2C_originale_di_et%C3%A0_flavia_o_traianea%2C_dalle_terme_presso_porta_laurentina%2C_01.JPG" },
   era: "Myth (pre-Trojan War generation)",
   where: "Argos, Seriphos",
   narrative: [
@@ -39,6 +40,7 @@ LESSONS["h-heracles"] = {
   phase: "p2",
   title: "Heracles",
   subtitle: "The strongest man alive, and the twelve labors that were meant to break him",
+  image: { file: "img/h-heracles.jpg", alt: "The Farnese Hercules", artist: "Glycon of Athens (copy of a Lysippos original)", license: "CC BY 2.5", commonsUrl: "https://commons.wikimedia.org/wiki/File:Herakles_Farnese_MAN_Napoli_Inv6001_n01.jpg" },
   era: "Myth (one generation before the Trojan War)",
   where: "Thebes, and effectively everywhere else",
   narrative: [
@@ -70,6 +72,7 @@ LESSONS["h-theseus"] = {
   phase: "p2",
   title: "Theseus",
   subtitle: "The Minotaur, a thread through a maze, and Athens's national hero",
+  image: { file: "img/h-theseus.jpg", alt: "Theseus, Attic kylix by the painter Aison", artist: "Aison (vase painter)", license: "CC BY 2.5", commonsUrl: "https://commons.wikimedia.org/wiki/File:Kylix_Theseus_Aison_MNA_Inv11365_n1.jpg" },
   era: "Myth (generation before Heracles's sons)",
   where: "Athens, Crete",
   narrative: [
@@ -98,6 +101,7 @@ LESSONS["h-jason"] = {
   phase: "p2",
   title: "Jason and the Argonauts",
   subtitle: "A stolen throne, a golden fleece, and a sorceress you really don't want to cross",
+  image: { file: "img/h-jason.jpg", alt: "Jason, Attic cup by Douris", artist: "Douris (vase painter)", license: "Public domain", commonsUrl: "https://commons.wikimedia.org/wiki/File:Douris_cup_Jason_Vatican_16545.jpg" },
   era: "Myth (one generation before the Trojan War)",
   where: "Iolcus, the Black Sea coast (Colchis)",
   narrative: [
@@ -125,6 +129,7 @@ LESSONS["h-oedipus"] = {
   phase: "p2",
   title: "Oedipus",
   subtitle: "The clearest proof that in Greek myth, running from a prophecy is what fulfills it",
+  image: { file: "img/h-oedipus.jpg", alt: "Oedipus and the Sphinx, Attic vase", artist: "Zde", license: "CC BY-SA 4.0", commonsUrl: "https://commons.wikimedia.org/wiki/File:Oedipus_and_Sphinx%2C_pelike%2C_450-440_BC%2C_Berlin_F_2355%2C_141646.jpg" },
   era: "Myth (generation before the Trojan War)",
   where: "Thebes",
   narrative: [
@@ -153,6 +158,7 @@ LESSONS["h-atalanta"] = {
   phase: "p2",
   title: "Atalanta",
   subtitle: "Faster than every man who tried to marry her — and it cost most of them their lives",
+  image: { file: "img/h-atalanta.jpg", alt: "Atalanta, Attic lekythos, Cleveland Museum of Art", artist: "Daderot", license: "CC0", commonsUrl: "https://commons.wikimedia.org/wiki/File:Atalanta_Lekythos%2C_500-490_BC%2C_Greek%2C_Attic%2C_attributed_to_Douris%2C_ceramic_-_Cleveland_Museum_of_Art_-_DSC08212.JPG" },
   era: "Myth (Argonaut generation)",
   where: "Arcadia, Calydon",
   narrative: [
@@ -180,6 +186,7 @@ LESSONS["h-daedalus"] = {
   phase: "p2",
   title: "Daedalus and Icarus",
   subtitle: "The greatest craftsman in Greece builds his own son a way to die",
+  image: { file: "img/h-daedalus.jpg", alt: "Mosaic of Daedalus, Zeugma Mosaic Museum", artist: "Dosseman", license: "CC BY-SA 4.0", commonsUrl: "https://commons.wikimedia.org/wiki/File:Gaziantep_Zeugma_Museum_Daedalus_mosaic_1873.jpg" },
   era: "Myth (roughly the generation of Theseus)",
   where: "Athens, Crete",
   narrative: [
@@ -207,6 +214,7 @@ LESSONS["h-bestiary"] = {
   phase: "p2",
   title: "The Bestiary",
   subtitle: "The monsters that didn't get their own hero to headline — Medusa, the Sphinx's cousins, and the rest",
+  image: { file: "img/h-bestiary.jpg", alt: "The Chimera of Arezzo, an Etruscan bronze", artist: "Unknown (Etruscan bronze)", license: "Public domain", commonsUrl: "https://commons.wikimedia.org/wiki/File:Chimera_Apulia_Louvre_K362.jpg" },
   era: "Myth",
   narrative: [
     "Most Greek monsters show up as an obstacle inside someone else's story, but a few deserve their own facts because they recur constantly across mythology. Start with Medusa: originally a beautiful mortal priestess of Athena, she's assaulted by Poseidon inside Athena's own temple — and Athena, in one of the mythology's more uncomfortable judgments, punishes Medusa rather than Poseidon, turning her hair to snakes and her gaze to stone. It's Perseus who later kills her (that lesson has the details), but Medusa's own origin is a story about misplaced blame, not simple monstrousness.",

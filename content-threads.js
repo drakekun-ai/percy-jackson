@@ -10,6 +10,7 @@ LESSONS["t-bronze-age"] = {
   phase: "p3",
   title: "Before Greece: Minoans and Mycenaeans",
   subtitle: "Two real Bronze Age civilizations that the myths remember as a golden age",
+  image: { file: "img/t-bronze-age.jpg", alt: "The so-called Mask of Agamemnon, Mycenae", artist: "Gleb Simonov", license: "Public domain", commonsUrl: "https://commons.wikimedia.org/wiki/File:Athens_%E2%80%94_Mask_of_Agamemnon.jpg" },
   era: "c. 3000–1100 BCE",
   where: "Crete, the Peloponnese (Mycenae, Pylos, Tiryns)",
   narrative: [
@@ -37,6 +38,7 @@ LESSONS["t-troy"] = {
   phase: "p3",
   title: "The Trojan War",
   subtitle: "Where Homer's epic meets an actual archaeological site — and where they diverge",
+  image: { file: "img/t-troy.jpg", alt: "The Mykonos vase, the earliest known depiction of the Trojan Horse", artist: "Travelling Runes", license: "CC BY-SA 2.0", commonsUrl: "https://commons.wikimedia.org/wiki/File:Mykonos_vase.jpg" },
   era: "Traditionally dated c. 1250–1180 BCE",
   where: "Troy (Hisarlik, northwest Turkey)",
   narrative: [
@@ -67,6 +69,7 @@ LESSONS["t-dark-age"] = {
   phase: "p3",
   title: "The Dark Age and the Rise of the Polis",
   subtitle: "Three hundred years of near-silence, then city-states, an alphabet, and colonies everywhere",
+  image: { file: "img/t-dark-age.jpg", alt: "A Greek grave amphora, 8th century BC", artist: "George E. Koronaios", license: "CC BY-SA 4.0", commonsUrl: "https://commons.wikimedia.org/wiki/File:Grave_amphora._8th_cent._B.C.jpg" },
   era: "c. 1100–800 BCE (Dark Age); city-states emerge c. 800 BCE onward",
   where: "Mainland Greece and the wider Aegean",
   narrative: [
@@ -94,6 +97,7 @@ LESSONS["t-sparta-athens"] = {
   phase: "p3",
   title: "Sparta and Athens: Two Different Greeces",
   subtitle: "Same language, same gods, radically different answers to how a society should work",
+  image: { file: "img/t-sparta-athens.jpg", alt: "A helmed Spartan hoplite statue, often linked to Leonidas", artist: "Ticinese", license: "CC BY-SA 3.0", commonsUrl: "https://commons.wikimedia.org/wiki/File:Helmed_Hoplite_Sparta.JPG" },
   era: "c. 800–500 BCE",
   where: "Sparta (Laconia), Athens (Attica)",
   narrative: [
@@ -121,6 +125,7 @@ LESSONS["t-persian-wars"] = {
   phase: "p3",
   title: "The Persian Wars",
   subtitle: "Marathon, Thermopylae, Salamis — the underdog fight that made 'Greek' mean something",
+  image: { file: "img/t-persian-wars.jpg", alt: "A Greek hoplite fighting a Persian warrior, Attic vase", artist: "Unknown", license: "CC0", commonsUrl: "https://commons.wikimedia.org/wiki/File:Greek-Persian_duel_1.jpg" },
   era: "499–449 BCE",
   where: "Marathon, Thermopylae, Salamis, Plataea",
   narrative: [
@@ -149,6 +154,7 @@ LESSONS["t-golden-age"] = {
   phase: "p3",
   title: "The Golden Age of Athens",
   subtitle: "Democracy, the Parthenon, and the birth of Western philosophy and theatre — all in about fifty years",
+  image: { file: "img/t-golden-age.jpg", alt: "The Parthenon, Athens", artist: "Steve Swayne", license: "CC BY 2.0", commonsUrl: "https://commons.wikimedia.org/wiki/File:The_Parthenon_in_Athens.jpg" },
   era: "c. 479–431 BCE",
   where: "Athens",
   narrative: [
@@ -176,6 +182,7 @@ LESSONS["t-peloponnesian-war"] = {
   phase: "p3",
   title: "The Peloponnesian War",
   subtitle: "Athens and Sparta finally fight it out — and the golden age doesn't survive it",
+  image: { file: "img/t-peloponnesian-war.png", alt: "Map of the opposing alliances in the Peloponnesian War", artist: "Kenmayer (translation)", license: "CC BY-SA 3.0", commonsUrl: "https://commons.wikimedia.org/wiki/File:Pelop_war_en.png" },
   era: "431–404 BCE",
   where: "Athens, Sparta, and their respective alliance networks across the Greek world",
   narrative: [
@@ -203,6 +210,7 @@ LESSONS["t-alexander"] = {
   phase: "p3",
   title: "Philip, Alexander, and the Hellenistic World",
   subtitle: "How a kingdom the old city-states looked down on ended up spreading Greek culture across three continents",
+  image: { file: "img/t-alexander.jpg", alt: "Alexander the Great, detail of the Alexander Mosaic", artist: "Unknown artist", license: "Public domain", commonsUrl: "https://commons.wikimedia.org/wiki/File:Alexander_Mosaic_detail_of_Alexander_the_Great_%283x4_cropped%29.jpg" },
   era: "359–323 BCE (Philip and Alexander); Hellenistic period to c. 30 BCE",
   where: "Macedon, then Persia, Egypt, and Central Asia",
   narrative: [

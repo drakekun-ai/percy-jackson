@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Lessons — Greek History &amp; Myth</title>
-<link rel="stylesheet" href="styles.css?v=1" />
+<link rel="stylesheet" href="styles.css?v=2" />
 <link rel="manifest" href="manifest.webmanifest" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 <link rel="icon" href="icon-192.png" />
@@ -22,13 +22,13 @@
 </main>
 <footer class="site" id="site-footer"></footer>
 
-<script src="curriculum.js?v=1"></script>
-<script src="content-origins.js?v=1"></script>
-<script src="content-olympians.js?v=1"></script>
-<script src="content-heroes.js?v=1"></script>
-<script src="content-threads.js?v=1"></script>
-<script src="srs.js?v=1"></script>
-<script src="myth.js?v=1"></script>
+<script src="curriculum.js?v=2"></script>
+<script src="content-origins.js?v=2"></script>
+<script src="content-olympians.js?v=2"></script>
+<script src="content-heroes.js?v=2"></script>
+<script src="content-threads.js?v=2"></script>
+<script src="srs.js?v=2"></script>
+<script src="myth.js?v=2"></script>
 <script>
   Myth.renderHeader("lessons");
   Myth.renderFooter();
@@ -52,9 +52,11 @@
         const due = learned && lessonDue(l);
         const dotClass = due ? "due" : learned ? "learned" : "";
         const status = due ? '<span class="pill due">due</span>' : learned ? '<span class="pill learned">learned</span>' : '';
+        const thumb = l.image ? `<img src="${l.image.file}" alt="" loading="lazy" style="width:28px;height:28px;object-fit:cover;border-radius:50%;border:1px solid var(--border)" />` : "";
         return `<li class="lesson-row">
           <div style="display:flex;align-items:center;gap:0.6rem">
             <span class="status-dot ${dotClass}"></span>
+            ${thumb}
             <a class="title" href="lesson.html?id=${id}">${l.title}</a>
           </div>
           <div>${status}</div>

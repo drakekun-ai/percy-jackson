@@ -262,6 +262,33 @@ nav.tabs a.active, nav.tabs a:hover {
 }
 .lesson-head .facts-strip .fact-item strong { display: block; color: var(--text-dim); font-weight: 600; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; }
 
+.lesson-image {
+  margin: 1.1rem 0 1.6rem;
+  text-align: center;
+}
+.lesson-image img {
+  max-width: 100%;
+  max-height: 340px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  background: var(--bg-alt);
+}
+.lesson-image figcaption {
+  margin-top: 0.45rem;
+}
+.lesson-image figcaption a { color: var(--text-dim); }
+
+.panel-image {
+  width: 100%;
+  max-height: 220px;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-alt);
+  margin-bottom: 0.6rem;
+}
+
 .narrative p { margin: 0 0 1rem; }
 .narrative .aside {
   border-left: 3px solid var(--accent);

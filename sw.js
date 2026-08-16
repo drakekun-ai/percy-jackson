@@ -9,7 +9,7 @@
    whatever it cached the first time, indefinitely.
    ============================================================ */
 
-const CACHE = "greek-myth-v1";
+const CACHE = "greek-myth-v2";
 
 const PRECACHE_URLS = [
   "index.html",
@@ -33,6 +33,39 @@ const PRECACHE_URLS = [
   "icon-192.png",
   "icon-512.png",
   "apple-touch-icon.png",
+  "img/g-aphrodite.jpg",
+  "img/g-apollo.jpg",
+  "img/g-ares.jpg",
+  "img/g-artemis.jpg",
+  "img/g-athena.jpg",
+  "img/g-demeter.jpg",
+  "img/g-dionysus.jpg",
+  "img/g-hades.jpg",
+  "img/g-hephaestus.jpg",
+  "img/g-hera.jpg",
+  "img/g-hermes.jpg",
+  "img/g-hestia.jpg",
+  "img/g-poseidon.jpg",
+  "img/g-zeus.jpg",
+  "img/h-atalanta.jpg",
+  "img/h-bestiary.jpg",
+  "img/h-daedalus.jpg",
+  "img/h-heracles.jpg",
+  "img/h-jason.jpg",
+  "img/h-oedipus.jpg",
+  "img/h-perseus.jpg",
+  "img/h-theseus.jpg",
+  "img/o-chaos.jpg",
+  "img/o-titanomachy.jpg",
+  "img/o-titans.jpg",
+  "img/t-alexander.jpg",
+  "img/t-bronze-age.jpg",
+  "img/t-dark-age.jpg",
+  "img/t-golden-age.jpg",
+  "img/t-peloponnesian-war.png",
+  "img/t-persian-wars.jpg",
+  "img/t-sparta-athens.jpg",
+  "img/t-troy.jpg",
 ];
 
 self.addEventListener("install", (event) => {
