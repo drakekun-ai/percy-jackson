@@ -4,11 +4,10 @@ The app runs as a normal website, but once it's hosted somewhere (GitHub Pages â
 see the main README) you can install it to your home screen as a real app that
 works with no internet connection. This only needs to be done once.
 
-Replace `YOUR-GITHUB-USERNAME` and `YOUR-REPO-NAME` below with your actual GitHub
-Pages URL, which looks like:
+Once it's pushed and Pages is enabled (see the main README), the URL is:
 
 ```
-https://YOUR-GITHUB-USERNAME.github.io/YOUR-REPO-NAME/
+https://babablacksheep-ops.github.io/greek-history-myth/
 ```
 
 ---

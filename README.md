@@ -107,19 +107,18 @@ Do it every month or so. Import restores it, on this machine or any other.
 Hosting it on GitHub Pages is what makes the phone install possible — a `file://` page
 can't run a service worker, so offline-on-a-phone specifically needs a real URL.
 
-1. Create a new repository on GitHub (public or private — Pages works either way, though
-   a private repo needs a paid plan for Pages specifically).
-2. From this folder:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git branch -M main
-   git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPO.git
-   git push -u origin main
-   ```
+This repo is already set up as **`babablacksheep-ops/greek-history-myth`** (public) —
+local commits are done, the remote is already added. All that's left:
+
+1. Create the (empty) repository at
+   [github.com/new](https://github.com/new?name=greek-history-myth&visibility=public) —
+   name it `greek-history-myth`, public, and don't add a README/gitignore/license there
+   (this repo already has them; adding them on GitHub too would conflict).
+2. From this folder: `git push -u origin main`. First push from this machine may pop up a
+   browser window to sign in to GitHub — that's Git's own credential manager, not this app.
 3. On GitHub: **Settings → Pages → Source → Deploy from a branch → `main` / `/ (root)`
-   → Save.** Give it a minute; the URL appears at the top of that same page.
+   → Save.** Give it a minute; the URL appears at the top of that same page — it'll be
+   `https://babablacksheep-ops.github.io/greek-history-myth/`.
 4. Open that URL on your phone and follow [INSTALL-ON-PHONE.md](INSTALL-ON-PHONE.md).
 
 After that first push, `git add . && git commit -m "..." && git push` is all it takes to
