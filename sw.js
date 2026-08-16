@@ -9,7 +9,7 @@
    whatever it cached the first time, indefinitely.
    ============================================================ */
 
-const CACHE = "greek-myth-v3";
+const CACHE = "greek-myth-v4";
 
 const PRECACHE_URLS = [
   "index.html",
@@ -37,7 +37,7 @@ const PRECACHE_URLS = [
   "g-apollo.jpg",
   "g-ares.jpg",
   "g-artemis.jpg",
-  "g-athena.jpg",
+  "g-athena.jpeg",
   "g-demeter.jpg",
   "g-dionysus.jpg",
   "g-hades.jpg",

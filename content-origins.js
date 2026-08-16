@@ -40,7 +40,7 @@ LESSONS["o-titans"] = {
   phase: "p0",
   title: "The Titans and the Fall of Uranus",
   subtitle: "The first coup, and the wound that starts everything else",
-  image: { file: "o-titans.jpg", alt: "Rhea handing Cronus a swaddled stone in place of baby Zeus, Attic vase", artist: "Attributed to the Nausicaä Painter (Met Museum)", license: "CC0", commonsUrl: "https://commons.wikimedia.org/wiki/File:Rhea_handing_a_swaddled_stone_to_Cronus%2C_Attic_terracotta_pelike%2C_c._460%E2%80%93450_BC%2C_Met_06.1021.144.jpg_%28cropped%29.jpg" },
+  image: { file: "o-titans.jpg", alt: "Saturn Devouring His Son, by Francisco Goya", artist: "Francisco Goya", license: "Public domain", commonsUrl: "https://commons.wikimedia.org/wiki/File:Francisco_de_Goya%2C_Saturno_devorando_a_su_hijo_%281819-1823%29.jpg" },
   era: "Before time",
   narrative: [
     "One Titan says yes to Gaia's plan: Kronos, the youngest and most ambitious of the twelve. Gaia arms him with the sickle, he ambushes his father, and he castrates Uranus — cutting him in a way that permanently ends his ability to rule. Uranus's blood falls on the earth and produces new beings (including the Furies, who exist specifically to punish crimes against family — which is a pointed detail, since Kronos just committed one). Uranus's severed essence falls into the sea, and where the sea foams around it, Aphrodite rises fully formed. She's therefore older than the Olympian generation she later hangs out with — technically an aunt figure who shows up to every party as if she's one of the cousins.",

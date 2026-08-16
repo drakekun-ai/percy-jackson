@@ -34,32 +34,41 @@ IMG_DIR = PROJECT  # flat, deliberately — see the module docstring above
 HEADERS = {"User-Agent": "GreekMythStudyApp/1.0 (personal offline study project)"}
 
 # (lesson_id, Wikipedia article title to pull the lead image from, alt text)
+#
+# Where a famous painting or dynamic sculpture exists (the way people
+# actually picture these figures), it's used in preference to a plain
+# archaeological photo of a bust or vase fragment — those read as flat and
+# forgettable next to something like Botticelli's Venus or Caravaggio's
+# Medusa. Plain artifact photos are kept where no well-known dramatic
+# depiction exists (Hermes, Hestia, Demeter, Jason) or where the
+# archaeological piece IS the dynamic, iconic image (Apollo Belvedere,
+# the Poseidon of Artemision, the Chimera of Arezzo).
 CANDIDATES = [
     ("o-chaos", "Gaia", "Relief of Gaia, the Earth, from the Pergamon Altar"),
-    ("o-titans", "Cronus", "Rhea handing Cronus a swaddled stone in place of baby Zeus, Attic vase"),
+    ("o-titans", "Saturn Devouring His Son", "Saturn Devouring His Son, by Francisco Goya"),
     ("o-titanomachy", "Titanomachy", "The Fall of the Titans, by Cornelis van Haarlem"),
-    ("g-zeus", "Zeus", "The Zeus of Otricoli, a Roman marble copy of a Greek original"),
-    ("g-hera", "Hera", "The Hera Campana, Louvre"),
+    ("g-zeus", "Jupiter and Thetis", "Jupiter and Thetis, by Jean Auguste Dominique Ingres"),
+    ("g-hera", "The Origin of the Milky Way", "The Origin of the Milky Way, by Tintoretto"),
     ("g-poseidon", "Poseidon", "Statue of Poseidon, National Archaeological Museum, Athens"),
-    ("g-hades", "Hades", "Hades and Persephone, Attic vase painting"),
+    ("g-hades", "The Rape of Proserpina", "The Rape of Proserpina, by Gian Lorenzo Bernini"),
     ("g-demeter", "Demeter", "Demeter, Palazzo Altemps"),
-    ("g-athena", "Athena", "The Mattei Athena, Louvre"),
+    ("g-athena", "Pallas Athena (Klimt)", "Pallas Athena, by Gustav Klimt"),
     ("g-apollo", "Apollo Belvedere", "The Apollo Belvedere"),
-    ("g-artemis", "Artemis", "The Diana of Versailles, Louvre"),
-    ("g-ares", "Ares", "The Borghese Ares (Ares Ludovisi)"),
-    ("g-aphrodite", "Aphrodite", "The Aphrodite of Cnidus, Palazzo Altemps"),
-    ("g-hephaestus", "Hephaestus", "Hephaestus and Thetis, Attic kylix"),
+    ("g-artemis", "Diana the Huntress", "Diana the Huntress, School of Fontainebleau"),
+    ("g-ares", "Venus and Mars (Botticelli)", "Venus and Mars, by Sandro Botticelli"),
+    ("g-aphrodite", "The Birth of Venus", "The Birth of Venus, by Sandro Botticelli"),
+    ("g-hephaestus", "Apollo in the Forge of Vulcan", "Apollo in the Forge of Vulcan, by Diego Velázquez"),
     ("g-hermes", "Hermes", "Hermes Ingenui, a Roman copy after Polykleitos"),
-    ("g-dionysus", "Dionysus", "Dionysus, Louvre"),
+    ("g-dionysus", "Bacchus (Caravaggio)", "Bacchus, by Caravaggio"),
     ("g-hestia", "Hestia", "The Hestia Giustiniani"),
     ("h-perseus", "Perseus", "Perseus with the head of Medusa, Roman-era statue"),
     ("h-heracles", "Heracles", "The Farnese Hercules"),
-    ("h-theseus", "Theseus", "Theseus, Attic kylix by the painter Aison"),
+    ("h-theseus", "Bacchus and Ariadne", "Bacchus and Ariadne, by Titian (Ariadne, abandoned by Theseus, found by Bacchus)"),
     ("h-jason", "Jason (mythology)", "Jason, Attic cup by Douris"),
-    ("h-oedipus", "Oedipus", "Oedipus and the Sphinx, Attic vase"),
-    ("h-atalanta", "Atalanta", "Atalanta, Attic lekythos, Cleveland Museum of Art"),
-    ("h-daedalus", "Daedalus", "Mosaic of Daedalus, Zeugma Mosaic Museum"),
-    ("h-bestiary", "Chimera (mythology)", "The Chimera of Arezzo, an Etruscan bronze"),
+    ("h-oedipus", "Oedipus and the Sphinx (Ingres)", "Oedipus and the Sphinx, by Jean Auguste Dominique Ingres"),
+    ("h-atalanta", "Atalanta and Hippomenes", "Atalanta and Hippomenes, by Guido Reni"),
+    ("h-daedalus", "The Lament for Icarus", "The Lament for Icarus, by Herbert James Draper"),
+    ("h-bestiary", "Medusa (Caravaggio)", "Medusa, by Caravaggio"),
     ("t-bronze-age", "Mask of Agamemnon", "The so-called Mask of Agamemnon, Mycenae"),
     ("t-troy", "Trojan Horse", "The Mykonos vase, the earliest known depiction of the Trojan Horse"),
     ("t-dark-age", "Dipylon Amphora", "A Greek grave amphora, 8th century BC"),

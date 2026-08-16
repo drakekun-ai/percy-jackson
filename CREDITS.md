@@ -12,30 +12,30 @@ process this file records the results of).
 | Lesson | File | Subject | Photo/artist | License | Source |
 |---|---|---|---|---|---|
 | o-chaos | o-chaos.jpg | Relief of Gaia, Pergamon Altar | Gryffindor | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Pergamonmuseum_-_Antikensammlung_-_Pergamonaltar_13_detail.jpg) |
-| o-titans | o-titans.jpg | Rhea handing Cronus a swaddled stone, Attic vase | Attributed to the Nausicaä Painter (Met Museum) | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:Rhea_handing_a_swaddled_stone_to_Cronus,_Attic_terracotta_pelike,_c._460–450_BC,_Met_06.1021.144.jpg_(cropped).jpg) |
+| o-titans | o-titans.jpg | Saturn Devouring His Son | Francisco Goya | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Francisco_de_Goya,_Saturno_devorando_a_su_hijo_(1819-1823).jpg) |
 | o-titanomachy | o-titanomachy.jpg | The Fall of the Titans | Cornelis van Haarlem | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Cornelis_Cornelisz._van_Haarlem_-_The_Fall_of_the_Titans_-_Google_Art_Project.jpg) |
-| g-zeus | g-zeus.jpg | Zeus of Otricoli | Unknown artist | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Zeus_Otricoli_Pio-Clementino_Inv257.jpg) |
-| g-hera | g-hera.jpg | Hera Campana, Louvre | Marie-Lan Nguyen | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Hera_Campana_Louvre_Ma2283.jpg) |
+| g-zeus | g-zeus.jpg | Jupiter and Thetis | Jean-Auguste-Dominique Ingres | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Júpiter_y_Tetis,_por_Dominique_Ingres.jpg) |
+| g-hera | g-hera.jpg | The Origin of the Milky Way | Jacopo Tintoretto | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Jacopo_Tintoretto_-_The_Origin_of_the_Milky_Way_-_Google_Art_Project.jpg) |
 | g-poseidon | g-poseidon.jpg | Statue of Poseidon, NAMA | DerHexer | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Statue_of_Poseidon_NAMA_235_(DerHexer),_part_2.JPG) |
-| g-hades | g-hades.jpg | Hades and Persephone, Attic vase | Unknown (ancient vase painter) | CC BY 2.5 | [Commons](https://commons.wikimedia.org/wiki/File:Persephone_Hades_BM_Vase_E82_(cropped).jpg) |
+| g-hades | g-hades.jpg | The Rape of Proserpina (Bernini), Galleria Borghese | Alvesgaspar (photo) | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Rape_of_Prosepina_September_2015-3a.jpg) |
 | g-demeter | g-demeter.jpg | Demeter, Palazzo Altemps | Unknown | CC BY 2.5 | [Commons](https://commons.wikimedia.org/wiki/File:Demeter_Altemps_Inv8546.jpg) |
-| g-athena | g-athena.jpg | Mattei Athena, Louvre | Jastrow | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Mattei_Athena_Louvre_Ma530_n2.jpg) |
+| g-athena | g-athena.jpeg | Pallas Athena | Gustav Klimt | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Klimt_-_Pallas_Athene.jpeg) |
 | g-apollo | g-apollo.jpg | Apollo Belvedere | Livioandronico2013 | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Apollo_del_Belvedere.jpg) |
-| g-artemis | g-artemis.jpg | Diana of Versailles, Louvre | Shonagon | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:Diane_de_Versailles_-_Musée_du_Louvre_AGER_Ma_589.jpg) |
-| g-ares | g-ares.jpg | Ares Borghese-Ludovisi | Unknown | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Ο_Άρης_(Borghese-Λούβρου).jpg) |
-| g-aphrodite | g-aphrodite.jpg | Aphrodite of Cnidus, Palazzo Altemps | Copy of Praxiteles; restored by Ippolito Buzzi | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Cnidus_Aphrodite_Altemps_Inv8619.jpg) |
-| g-hephaestus | g-hephaestus.jpg | Hephaestus and Thetis, Attic kylix | The Foundry Painter (name vase) | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Hephaistos_Thetis_at_Kylix_by_the_Foundry_Painter_Antikensammlung_Berlin_F2294.jpg) |
+| g-artemis | g-artemis.jpg | Diana the Huntress, School of Fontainebleau | Unknown photographer | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Diana_the_Huntress_-_School_of_Fontainebleau,_attributed_to_Luca_Penni.jpg) |
+| g-ares | g-ares.jpg | Venus and Mars | Sandro Botticelli | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Venus_and_Mars_National_Gallery.jpg) |
+| g-aphrodite | g-aphrodite.jpg | The Birth of Venus | Sandro Botticelli | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg) |
+| g-hephaestus | g-hephaestus.jpg | Apollo in the Forge of Vulcan | Diego Velázquez | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Velázquez_-_La_Fragua_de_Vulcano_(Museo_del_Prado,_1630).jpg) |
 | g-hermes | g-hermes.jpg | Hermes Ingenui | Unknown | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Hermes_Ingenui_Pio-Clementino_Inv544.jpg) |
-| g-dionysus | g-dionysus.jpg | Dionysus, Louvre | Marie-Lan Nguyen | CC BY 2.5 | [Commons](https://commons.wikimedia.org/wiki/File:Dionysos_Louvre_Ma87_n2.jpg) |
+| g-dionysus | g-dionysus.jpg | Bacchus | Caravaggio | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Bacchus_by_Caravaggio_1.jpg) |
 | g-hestia | g-hestia.jpg | Hestia Giustiniani | Unknown (Roman copy) | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Hestia_Giustiniani.jpg) |
 | h-perseus | h-perseus.jpg | Perseus with the head of Medusa | Sailko | CC BY 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Perseo_con_la_testa_di_medusa,_originale_di_età_flavia_o_traianea,_dalle_terme_presso_porta_laurentina,_01.JPG) |
 | h-heracles | h-heracles.jpg | Farnese Hercules | Glycon of Athens (copy of a Lysippos original) | CC BY 2.5 | [Commons](https://commons.wikimedia.org/wiki/File:Herakles_Farnese_MAN_Napoli_Inv6001_n01.jpg) |
-| h-theseus | h-theseus.jpg | Theseus, Attic kylix | Aison (vase painter) | CC BY 2.5 | [Commons](https://commons.wikimedia.org/wiki/File:Kylix_Theseus_Aison_MNA_Inv11365_n1.jpg) |
+| h-theseus | h-theseus.jpg | Bacchus and Ariadne (Ariadne, abandoned by Theseus, found by Bacchus) | Titian | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Titian_Bacchus_and_Ariadne.jpg) |
 | h-jason | h-jason.jpg | Jason, Attic cup | Douris (vase painter) | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Douris_cup_Jason_Vatican_16545.jpg) |
-| h-oedipus | h-oedipus.jpg | Oedipus and the Sphinx, Attic vase | Zde | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Oedipus_and_Sphinx,_pelike,_450-440_BC,_Berlin_F_2355,_141646.jpg) |
-| h-atalanta | h-atalanta.jpg | Atalanta, Attic lekythos, Cleveland Museum | Daderot | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:Atalanta_Lekythos,_500-490_BC,_Greek,_Attic,_attributed_to_Douris,_ceramic_-_Cleveland_Museum_of_Art_-_DSC08212.JPG) |
-| h-daedalus | h-daedalus.jpg | Daedalus mosaic, Zeugma Mosaic Museum | Dosseman | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Gaziantep_Zeugma_Museum_Daedalus_mosaic_1873.jpg) |
-| h-bestiary | h-bestiary.jpg | Chimera of Arezzo | Unknown (Etruscan bronze) | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Chimera_Apulia_Louvre_K362.jpg) |
+| h-oedipus | h-oedipus.jpg | Oedipus and the Sphinx | Jean-Auguste-Dominique Ingres | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Œdipe_explique_l'énigme_du_sphinx_-_Jean-Auguste_Dominique_Ingres_-_Musée_du_Louvre_Peintures_RF_218.jpg) |
+| h-atalanta | h-atalanta.jpg | Atalanta and Hippomenes | Guido Reni | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Guido_Reni_-_Atalanta_and_Hippomenes_-_Google_Art_Project.jpg) |
+| h-daedalus | h-daedalus.jpg | The Lament for Icarus | Herbert James Draper | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Herbert_Draper_-_The_Lament_for_Icarus_-_Google_Art_Project.jpg) |
+| h-bestiary | h-bestiary.jpg | Medusa | Caravaggio | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Caravaggio_-_Medusa_-_Google_Art_Project.jpg) |
 | t-bronze-age | t-bronze-age.jpg | Mask of Agamemnon | Gleb Simonov | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Athens_—_Mask_of_Agamemnon.jpg) |
 | t-troy | t-troy.jpg | Mykonos vase | Travelling Runes | CC BY-SA 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Mykonos_vase.jpg) |
 | t-dark-age | t-dark-age.jpg | Greek grave amphora, 8th c. BC | George E. Koronaios | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Grave_amphora._8th_cent._B.C.jpg) |
