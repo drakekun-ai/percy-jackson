@@ -1,9 +1,18 @@
 """
 fetch_images.py — pulls one representative image per lesson from Wikipedia
 (via the REST summary API, which resolves to Wikimedia Commons) and saves it
-locally to img/, so the app has zero runtime dependency on Wikipedia.
+locally to the project root, so the app has zero runtime dependency on
+Wikipedia.
 
-This is what produced the current img/ contents and CREDITS.md — re-run it
+Images are saved flat, at the project root, alongside everything else —
+NOT in an img/ subfolder. That's deliberate: this repo is published by
+dragging files onto GitHub's web uploader, which silently flattens any
+subfolder it's given (see the README's "Structure" section). A nested
+img/ folder becomes loose files at the repo root with no warning, and the
+site keeps requesting img/whatever.jpg and getting 404s. Keeping images
+flat from the start means there's no folder for the uploader to flatten.
+
+This is what produced the current image files and CREDITS.md — re-run it
 if you add lessons and want to extend the same pipeline. It does NOT
 automatically update CREDITS.md or the `image:` fields in the content
 files; those still need a manual look (the "best" Wikipedia lead image
@@ -20,7 +29,7 @@ import urllib.parse
 import urllib.request
 
 PROJECT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-IMG_DIR = os.path.join(PROJECT, "img")
+IMG_DIR = PROJECT  # flat, deliberately — see the module docstring above
 
 HEADERS = {"User-Agent": "GreekMythStudyApp/1.0 (personal offline study project)"}
 

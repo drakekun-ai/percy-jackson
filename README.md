@@ -93,8 +93,8 @@ A few things work together on purpose:
   the Sunday Assembly regularly, not just reading it as a reference.
 - **A real image on almost every lesson.** 33 of the 35 lessons open with a classical
   statue, ancient vase painting, mosaic, or museum artifact pulled from Wikipedia/Wikimedia
-  Commons and stored locally in `img/` — a face (or a scene) to attach to the name, not
-  just prose. See [CREDITS.md](CREDITS.md) for every source and license.
+  Commons and stored locally, flat in the repo — a face (or a scene) to attach to the name,
+  not just prose. See [CREDITS.md](CREDITS.md) for every source and license.
 
 ---
 
@@ -111,23 +111,21 @@ Do it every month or so. Import restores it, on this machine or any other.
 Hosting it on GitHub Pages is what makes the phone install possible — a `file://` page
 can't run a service worker, so offline-on-a-phone specifically needs a real URL.
 
-This repo is already set up as **`babablacksheep-ops/greek-history-myth`** (public) —
-local commits are done, the remote is already added. All that's left:
+**The easiest way, if you're not using git from the command line:** on GitHub, create a
+new public repository, then use **Add file → Upload files** and drag in every file from
+this folder — select them all at once, not folder by folder. Because everything here is
+deliberately flat (see "Structure" below), a plain multi-file drag-and-drop uploads it
+correctly with no extra steps. Then: **Settings → Pages → Source → Deploy from a branch
+→ `main` / `(root)` → Save.** The URL appears at the top of that page a minute later.
 
-1. Create the (empty) repository at
-   [github.com/new](https://github.com/new?name=greek-history-myth&visibility=public) —
-   name it `greek-history-myth`, public, and don't add a README/gitignore/license there
-   (this repo already has them; adding them on GitHub too would conflict).
-2. From this folder: `git push -u origin main`. First push from this machine may pop up a
-   browser window to sign in to GitHub — that's Git's own credential manager, not this app.
-3. On GitHub: **Settings → Pages → Source → Deploy from a branch → `main` / `/ (root)`
-   → Save.** Give it a minute; the URL appears at the top of that same page — it'll be
-   `https://babablacksheep-ops.github.io/greek-history-myth/`.
-4. Open that URL on your phone and follow [INSTALL-ON-PHONE.md](INSTALL-ON-PHONE.md).
+If you do use git: `git init`, `git add .`, `git commit -m "..."`, `git remote add origin
+<your-repo-url>`, `git push -u origin main` — then enable Pages the same way.
 
-After that first push, `git add . && git commit -m "..." && git push` is all it takes to
-publish updates — just remember `tools/stamp_version.py` first (see below) or the phone
-app won't notice anything changed.
+Either method works the same going forward: to publish an update, upload the changed
+files again (or `git add . && git commit && git push`) — just remember
+`tools/stamp_version.py` first (see below) or an already-installed phone app won't notice
+anything changed. Then open the Pages URL on your phone and follow
+[INSTALL-ON-PHONE.md](INSTALL-ON-PHONE.md).
 
 ---
 
@@ -165,6 +163,14 @@ The Lessons page shows the full roadmap, including what hasn't been written yet.
 
 ### Structure
 
+**Everything lives in one flat directory, deliberately.** GitHub's web uploader (Add
+file → Upload files) silently flattens any subfolder dropped into it — an `img/` folder
+of lesson images became loose files at the repo root with no warning, and the site kept
+requesting `img/whatever.jpg` and 404ing, with nothing in the browser to explain why.
+With no subfolders in the deployed site, that failure cannot happen again. `tools/` is
+the sole exception — it's developer-only, the site never fetches it, and it's fine if a
+future upload drops it (see below).
+
 ```
 index.html      dashboard — today's plan, progress, backup
 lessons.html    the full curriculum list
@@ -175,8 +181,8 @@ pantheon.html   free exploration of the family tree + the Sunday assembly drill
 sw.js                 service worker — precaches everything for offline use
 manifest.webmanifest  app name, icons, standalone display (the PWA install prompt)
 icon-192.png, icon-512.png, apple-touch-icon.png   generated app icons (tools/make_icons.py)
-img/                  one image per lesson, pulled from Wikimedia Commons (tools/fetch_images.py)
-CREDITS.md            artist/license/source for every image in img/
+g-zeus.jpg, h-heracles.jpg, t-alexander.jpg, ...   one image per lesson (tools/fetch_images.py)
+CREDITS.md            artist/license/source for every image above
 
 styles.css   all styling, light and dark, parchment/marble theme
 
@@ -195,10 +201,11 @@ content-threads.js    Phase 3 lesson content
 
 tools/make_icons.py      draws the app icons
 tools/stamp_version.py   bumps every ?v= cache-buster AND the service worker cache name
-tools/fetch_images.py    pulls one lesson image from Wikipedia into img/, records the license
+tools/fetch_images.py    pulls one lesson image from Wikipedia, saved flat, records the license
 ```
 
-`tools/` is developer-only — the site itself never fetches anything from it.
+`tools/` is developer-only — the site itself never fetches anything from it, so it's safe
+to leave out entirely when uploading (drag in everything except the `tools/` folder).
 
 ### After changing any `.js` or `.css` file
 
