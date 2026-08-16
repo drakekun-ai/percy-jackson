@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Review — Greek History &amp; Myth</title>
+<link rel="stylesheet" href="styles.css?v=1" />
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="icon" href="icon-192.png" />
+<meta name="theme-color" content="#1c3450" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Greek Myth" />
+</head>
+<body>
+<header class="site" id="site-header"></header>
+<main class="container">
+  <h1>Review queue</h1>
+  <div id="review-body"></div>
+</main>
+<footer class="site" id="site-footer"></footer>
+
+<script src="curriculum.js?v=1"></script>
+<script src="content-origins.js?v=1"></script>
+<script src="content-olympians.js?v=1"></script>
+<script src="content-heroes.js?v=1"></script>
+<script src="content-threads.js?v=1"></script>
+<script src="srs.js?v=1"></script>
+<script src="myth.js?v=1"></script>
+<script src="render.js?v=1"></script>
+<script src="quiz.js?v=1"></script>
+<script>
+  Myth.renderHeader("review");
+  Myth.renderFooter();
+
+  const body = document.getElementById("review-body");
+
+  // build full card list with lesson reference, filter to due
+  const allCards = [];
+  Object.values(LESSONS).forEach((l) => {
+    Myth.cardsFor(l).forEach((c) => allCards.push(c));
+  });
+  const dueIds = new Set(Srs.dueCards(allCards.map((c) => c.id)));
+  const dueCards = allCards.filter((c) => dueIds.has(c.id));
+
+  if (!dueCards.length) {
+    body.innerHTML = `
+      <div class="empty-state">
+        <p>Queue's clear. Nothing due right now.</p>
+        <a class="btn secondary" href="index.html">Back to dashboard</a>
+      </div>
+    `;
+  } else {
+    body.innerHTML = `<p class="muted">${dueCards.length} cards due.</p><div class="quiz-box" id="quiz-container"></div>`;
+    Quiz.run(document.getElementById("quiz-container"), dueCards, (stats) => {
+      const nav = document.createElement("div");
+      nav.className = "btn-row";
+      nav.style.marginTop = "1rem";
+      nav.innerHTML = `<a class="btn" href="index.html">Back to dashboard</a>`;
+      document.getElementById("quiz-container").after(nav);
+    });
+  }
+</script>
+</body>
+</html>

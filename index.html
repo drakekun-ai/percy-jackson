@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dashboard — Greek History &amp; Myth</title>
+<link rel="stylesheet" href="styles.css?v=1" />
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="icon" href="icon-192.png" />
+<meta name="theme-color" content="#1c3450" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Greek Myth" />
+</head>
+<body>
+<header class="site" id="site-header"></header>
+<main class="container">
+
+  <div id="today-plan"></div>
+
+  <div class="card">
+    <h2>Progress</h2>
+    <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+    <div class="stat-row" id="stat-row"></div>
+  </div>
+
+  <div class="card">
+    <h2>Back up your progress</h2>
+    <p class="muted small">Everything lives in this browser's local storage. Clearing your browser data erases it.
+      Export a small file every so often; import it here or on any other device to restore.</p>
+    <div class="btn-row">
+      <button class="btn secondary" id="export-btn">Export backup</button>
+      <button class="btn ghost" id="import-btn">Import backup</button>
+      <input type="file" id="import-file" accept="application/json" style="display:none" />
+    </div>
+    <div id="import-status" class="small" style="margin-top:0.5rem"></div>
+  </div>
+
+</main>
+<footer class="site" id="site-footer"></footer>
+
+<script src="curriculum.js?v=1"></script>
+<script src="content-origins.js?v=1"></script>
+<script src="content-olympians.js?v=1"></script>
+<script src="content-heroes.js?v=1"></script>
+<script src="content-threads.js?v=1"></script>
+<script src="srs.js?v=1"></script>
+<script src="myth.js?v=1"></script>
+<script src="render.js?v=1"></script>
+<script>
+  Myth.renderHeader("home");
+  Myth.renderFooter();
+  const progress = Myth.touchStreak();
+
+  const allIds = Myth.allCardIds();
+  const dueIds = Srs.dueCards(allIds);
+  const totalLessons = allLessonIds().length;
+  const learnedCount = progress.learned.length;
+
+  const planEl = document.getElementById("today-plan");
+  const sunday = Myth.isSunday();
+  const nextLesson = Myth.nextUnlearnedLesson();
+
+  let planHtml = `<div class="card today"><h2>Today's plan</h2>`;
+
+  if (dueIds.length > 0) {
+    planHtml += `
+      <p><span class="pill due">${dueIds.length} due</span> Clear these first — this is the part that makes everything stick.</p>
+      <div class="btn-row"><a class="btn" href="review.html">Start review (${dueIds.length})</a></div>
+    `;
+  } else {
+    planHtml += `<p><span class="pill learned">Queue clear</span> Nothing due right now.</p>`;
+  }
+
+  if (sunday) {
+    planHtml += `
+      <hr style="border:none;border-top:1px dashed var(--border);margin:1rem 0" />
+      <p><strong>It's Sunday — world assembly time.</strong> Skip the new lesson. Instead, place every
+      god, Titan and hero you've learned so far on one blank family tree, from memory. That's what turns
+      separate lessons into one connected picture.</p>
+      <div class="btn-row"><a class="btn secondary" href="pantheon.html?mode=assembly">Start assembly</a></div>
+    `;
+  } else if (nextLesson) {
+    planHtml += `
+      <hr style="border:none;border-top:1px dashed var(--border);margin:1rem 0" />
+      <p><span class="pill new">Next lesson</span> <strong>${nextLesson.title}</strong> — ${nextLesson.subtitle || ""}</p>
+      <div class="btn-row"><a class="btn secondary" href="lesson.html?id=${nextLesson.id}">Start lesson</a></div>
+    `;
+  } else {
+    planHtml += `
+      <hr style="border:none;border-top:1px dashed var(--border);margin:1rem 0" />
+      <p>You've started every written lesson. Check <a href="lessons.html">the roadmap</a> for what's coming next,
+      or explore the <a href="pantheon.html">Pantheon</a>.</p>
+    `;
+  }
+
+  planHtml += `</div>`;
+  planEl.innerHTML = planHtml;
+
+  const pct = totalLessons ? Math.round((learnedCount / totalLessons) * 100) : 0;
+  document.getElementById("progress-fill").style.width = pct + "%";
+  document.getElementById("stat-row").innerHTML = `
+    <div class="stat"><div class="num">${learnedCount}/${totalLessons}</div><div class="label">Lessons learned</div></div>
+    <div class="stat"><div class="num">${progress.streak}</div><div class="label">Day streak</div></div>
+    <div class="stat"><div class="num">${Srs.introducedCount(allIds)}</div><div class="label">Cards in rotation</div></div>
+  `;
+
+  document.getElementById("export-btn").addEventListener("click", () => Myth.exportBackup());
+  const importBtn = document.getElementById("import-btn");
+  const importFile = document.getElementById("import-file");
+  importBtn.addEventListener("click", () => importFile.click());
+  importFile.addEventListener("change", () => {
+    const file = importFile.files[0];
+    if (!file) return;
+    Myth.importBackup(file, (ok, err) => {
+      const el = document.getElementById("import-status");
+      if (ok) {
+        el.textContent = "Restored. Reloading…";
+        el.style.color = "var(--success)";
+        setTimeout(() => location.reload(), 700);
+      } else {
+        el.textContent = "That file didn't look like a valid backup.";
+        el.style.color = "var(--danger)";
+      }
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lesson — Greek History &amp; Myth</title>
+<link rel="stylesheet" href="styles.css?v=1" />
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="icon" href="icon-192.png" />
+<meta name="theme-color" content="#1c3450" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Greek Myth" />
+</head>
+<body>
+<header class="site" id="site-header"></header>
+<main class="container">
+  <div id="lesson-content"></div>
+  <div class="card" id="drill-card">
+    <h2 id="drill-heading">Drill what you just learned</h2>
+    <p class="muted small" id="drill-sub"></p>
+    <div id="quiz-container" class="quiz-box"></div>
+  </div>
+</main>
+<footer class="site" id="site-footer"></footer>
+
+<script src="curriculum.js?v=1"></script>
+<script src="content-origins.js?v=1"></script>
+<script src="content-olympians.js?v=1"></script>
+<script src="content-heroes.js?v=1"></script>
+<script src="content-threads.js?v=1"></script>
+<script src="family.js?v=1"></script>
+<script src="srs.js?v=1"></script>
+<script src="myth.js?v=1"></script>
+<script src="render.js?v=1"></script>
+<script src="quiz.js?v=1"></script>
+<script>
+  Myth.renderHeader("lessons");
+  Myth.renderFooter();
+
+  const params = new URLSearchParams(location.search);
+  const id = params.get("id");
+  const lesson = Myth.lesson(id);
+  const contentEl = document.getElementById("lesson-content");
+
+  if (!lesson) {
+    contentEl.innerHTML = `<div class="empty-state"><p>No lesson found for "${id || ""}".</p><a class="btn secondary" href="lessons.html">Back to lessons</a></div>`;
+    document.getElementById("drill-card").style.display = "none";
+  } else {
+    contentEl.innerHTML = Render.lessonPage(lesson);
+    const cards = Myth.cardsFor(lesson);
+    const quizContainer = document.getElementById("quiz-container");
+    const alreadyLearned = Myth.isLearned(id);
+    document.getElementById("drill-sub").textContent = alreadyLearned
+      ? `You've drilled this lesson before — running it again just reviews it early.`
+      : `${cards.length} cards. Answer honestly — the SRS only works if you do.`;
+
+    if (!cards.length) {
+      quizContainer.innerHTML = `<p class="muted">This lesson has no drill cards yet.</p>`;
+    } else {
+      Quiz.run(quizContainer, cards, () => {
+        Myth.markLearned(id);
+        const order = allLessonIds();
+        const idx = order.indexOf(id);
+        const nextId = order[idx + 1];
+        const next = nextId ? Myth.lesson(nextId) : null;
+        const nav = document.createElement("div");
+        nav.className = "btn-row";
+        nav.style.marginTop = "1rem";
+        nav.innerHTML = `
+          <a class="btn secondary" href="lessons.html">Back to lessons</a>
+          ${next ? `<a class="btn" href="lesson.html?id=${next.id}">Next: ${next.title}</a>` : `<a class="btn" href="index.html">Back to dashboard</a>`}
+        `;
+        quizContainer.after(nav);
+      });
+    }
+  }
+</script>
+</body>
+</html>

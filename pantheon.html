@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pantheon — Greek History &amp; Myth</title>
+<link rel="stylesheet" href="styles.css?v=1" />
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="icon" href="icon-192.png" />
+<meta name="theme-color" content="#1c3450" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Greek Myth" />
+</head>
+<body>
+<header class="site" id="site-header"></header>
+<main class="container">
+  <h1 id="page-title">The Pantheon</h1>
+  <p class="muted" id="page-sub"></p>
+  <div class="btn-row" id="mode-switch" style="margin-bottom:1rem"></div>
+  <div id="assembly-score" class="stat-row" style="margin-bottom:1rem"></div>
+  <div class="tree-wrap">
+    <div id="tree-container"></div>
+  </div>
+  <div class="card panel-side" id="side-panel" style="display:none"></div>
+</main>
+<footer class="site" id="site-footer"></footer>
+
+<script src="curriculum.js?v=1"></script>
+<script src="content-origins.js?v=1"></script>
+<script src="content-olympians.js?v=1"></script>
+<script src="content-heroes.js?v=1"></script>
+<script src="content-threads.js?v=1"></script>
+<script src="family.js?v=1"></script>
+<script src="srs.js?v=1"></script>
+<script src="myth.js?v=1"></script>
+<script src="render.js?v=1"></script>
+<script src="tree.js?v=1"></script>
+<script>
+  Myth.renderHeader("pantheon");
+  Myth.renderFooter();
+
+  const params = new URLSearchParams(location.search);
+  let mode = params.get("mode") === "assembly" ? "assembly" : "explore";
+
+  const treeContainer = document.getElementById("tree-container");
+  const sidePanel = document.getElementById("side-panel");
+  const scoreEl = document.getElementById("assembly-score");
+  const switchEl = document.getElementById("mode-switch");
+
+  function setModeButtons() {
+    switchEl.innerHTML = `
+      <button class="btn ${mode === "explore" ? "" : "secondary"}" id="btn-explore">Explore</button>
+      <button class="btn ${mode === "assembly" ? "" : "secondary"}" id="btn-assembly">Assembly drill</button>
+    `;
+    document.getElementById("btn-explore").addEventListener("click", () => { mode = "explore"; draw(); });
+    document.getElementById("btn-assembly").addEventListener("click", () => { mode = "assembly"; draw(); });
+  }
+
+  let assemblyState = {}; // id -> 'correct' | 'wrong'
+
+  function learnedSet() {
+    return new Set(Myth.loadProgress().learned.flatMap((lessonId) =>
+      FAMILY_TREE.nodes.filter((n) => n.lesson === lessonId).map((n) => n.id)
+    ));
+  }
+
+  function draw() {
+    setModeButtons();
+    sidePanel.style.display = "none";
+
+    if (mode === "explore") {
+      document.getElementById("page-title").textContent = "The Pantheon";
+      document.getElementById("page-sub").textContent = "Click anyone on the tree for a quick refresher and a link to their full lesson.";
+      scoreEl.innerHTML = "";
+      const learned = learnedSet();
+      Tree.render(treeContainer, FAMILY_TREE.nodes, {
+        learnedSet: learned,
+        onNodeClick: (node) => showExplorePanel(node),
+      });
+    } else {
+      document.getElementById("page-title").textContent = "Sunday Assembly";
+      document.getElementById("page-sub").textContent = "Every name is hidden. Click a node, decide who it is, then reveal and grade yourself honestly.";
+      assemblyState = {};
+      renderAssemblyScore();
+      Tree.render(treeContainer, FAMILY_TREE.nodes, {
+        blank: true,
+        onNodeClick: (node, g) => showAssemblyPanel(node, g),
+      });
+    }
+  }
+
+  function byId(id) {
+    return FAMILY_TREE.nodes.find((n) => n.id === id);
+  }
+
+  function relLine(node) {
+    const parents = (node.parents || []).map(byId).filter(Boolean).map((n) => n.name);
+    const children = FAMILY_TREE.nodes.filter((n) => (n.parents || []).includes(node.id)).map((n) => n.name);
+    const parts = [];
+    if (parents.length) parts.push(`Child of ${parents.join(" & ")}`);
+    if (children.length) parts.push(`Parent of ${children.join(", ")}`);
+    return parts.length ? `<p class="muted small">${parts.join(" — ")}</p>` : "";
+  }
+
+  function showExplorePanel(node) {
+    sidePanel.style.display = "block";
+    const learned = Myth.isLearned(node.lesson);
+    sidePanel.innerHTML = `
+      <h3>${node.name}</h3>
+      ${relLine(node)}
+      ${node.other ? `<p class="muted small">${node.other}</p>` : ""}
+      ${node.note ? `<div class="aside"><strong>Worth knowing.</strong> ${node.note}</div>` : ""}
+      ${node.lesson
+        ? `<div class="btn-row"><a class="btn secondary" href="lesson.html?id=${node.lesson}">${learned ? "Review lesson" : "Read lesson"}</a></div>`
+        : `<p class="muted small">No dedicated lesson for this figure yet.</p>`}
+    `;
+  }
+
+  function showAssemblyPanel(node, g) {
+    if (assemblyState[node.id]) {
+      sidePanel.style.display = "block";
+      sidePanel.innerHTML = `<h3>${node.name}</h3><p class="muted small">Already graded this round: <strong>${assemblyState[node.id]}</strong>.</p>`;
+      return;
+    }
+    sidePanel.style.display = "block";
+    sidePanel.innerHTML = `
+      <h3>Who is this?</h3>
+      <p class="muted small">Say the name out loud (or just think it), then reveal.</p>
+      <div class="btn-row"><button class="btn" id="reveal-assembly">Reveal</button></div>
+    `;
+    document.getElementById("reveal-assembly").addEventListener("click", () => {
+      sidePanel.innerHTML = `
+        <h3>${node.name}</h3>
+        ${node.other ? `<p class="muted small">${node.other}</p>` : ""}
+        <div class="btn-row">
+          <button class="btn bad" id="assembly-miss">I missed it</button>
+          <button class="btn good" id="assembly-got">I knew it</button>
+        </div>
+      `;
+      document.getElementById("assembly-miss").addEventListener("click", () => gradeAssembly(node, g, false));
+      document.getElementById("assembly-got").addEventListener("click", () => gradeAssembly(node, g, true));
+    });
+  }
+
+  function gradeAssembly(node, g, correct) {
+    assemblyState[node.id] = correct ? "correct" : "wrong";
+    const circle = g.querySelector("circle");
+    circle.classList.remove("assembly-blank");
+    circle.classList.add(correct ? "assembly-correct" : "assembly-wrong");
+    const label = g.querySelector("text");
+    label.textContent = node.name;
+    renderAssemblyScore();
+  }
+
+  function renderAssemblyScore() {
+    const total = FAMILY_TREE.nodes.length;
+    const done = Object.keys(assemblyState).length;
+    const correct = Object.values(assemblyState).filter((v) => v === "correct").length;
+    scoreEl.innerHTML = `
+      <div class="stat"><div class="num">${done}/${total}</div><div class="label">Placed</div></div>
+      <div class="stat"><div class="num">${correct}</div><div class="label">Correct</div></div>
+    `;
+  }
+
+  draw();
+</script>
+</body>
+</html>

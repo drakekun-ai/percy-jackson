@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lessons — Greek History &amp; Myth</title>
+<link rel="stylesheet" href="styles.css?v=1" />
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="icon" href="icon-192.png" />
+<meta name="theme-color" content="#1c3450" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Greek Myth" />
+</head>
+<body>
+<header class="site" id="site-header"></header>
+<main class="container">
+  <h1>The full roadmap</h1>
+  <p class="muted">Every phase, in the order it's taught. Greyed-out rows aren't written yet.</p>
+  <div id="phases"></div>
+</main>
+<footer class="site" id="site-footer"></footer>
+
+<script src="curriculum.js?v=1"></script>
+<script src="content-origins.js?v=1"></script>
+<script src="content-olympians.js?v=1"></script>
+<script src="content-heroes.js?v=1"></script>
+<script src="content-threads.js?v=1"></script>
+<script src="srs.js?v=1"></script>
+<script src="myth.js?v=1"></script>
+<script>
+  Myth.renderHeader("lessons");
+  Myth.renderFooter();
+
+  const wrap = document.getElementById("phases");
+  const allIds = Myth.allCardIds();
+  const dueSet = new Set(Srs.dueCards(allIds));
+
+  function lessonDue(lesson) {
+    return Myth.cardsFor(lesson).some((c) => dueSet.has(c.id));
+  }
+
+  CURRICULUM.phases.forEach((phase) => {
+    const block = document.createElement("div");
+    block.className = "phase-block";
+    const rows = phase.lessons
+      .map((id) => {
+        const l = LESSONS[id];
+        if (!l) return `<li class="lesson-row unwritten"><span class="status-dot"></span><span class="title">${id}</span><span class="meta">not yet written</span></li>`;
+        const learned = Myth.isLearned(id);
+        const due = learned && lessonDue(l);
+        const dotClass = due ? "due" : learned ? "learned" : "";
+        const status = due ? '<span class="pill due">due</span>' : learned ? '<span class="pill learned">learned</span>' : '';
+        return `<li class="lesson-row">
+          <div style="display:flex;align-items:center;gap:0.6rem">
+            <span class="status-dot ${dotClass}"></span>
+            <a class="title" href="lesson.html?id=${id}">${l.title}</a>
+          </div>
+          <div>${status}</div>
+        </li>`;
+      })
+      .join("");
+    const roadmapExtra = CURRICULUM.roadmap
+      .filter((r) => r.phase === phase.id)
+      .map((r) => `<li class="lesson-row unwritten"><span class="status-dot"></span><span class="title">${r.title}</span><span class="meta">planned</span></li>`)
+      .join("");
+    block.innerHTML = `
+      <div class="phase-header"><h2>${phase.title}</h2><span class="subtitle">${phase.subtitle}</span></div>
+      <ul class="lesson-list">${rows}${roadmapExtra}</ul>
+    `;
+    wrap.appendChild(block);
+  });
+</script>
+</body>
+</html>
